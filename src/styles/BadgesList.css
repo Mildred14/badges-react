@@ -1,0 +1,27 @@
+.list-content {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 2px 2px 2px #4d4d4d;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.list-text > p {
+  margin: 0;
+}
+
+.list-name {
+  font-weight: bold;
+}
+
+.list-twitter {
+  color: #2D9FDB;
+}
+
+.list-avatar {
+  margin-right: 20px;
+  border-radius: 50%;
+}
