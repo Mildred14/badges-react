@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3003';
+const BASE_URL = 'http://localhost:3001';
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 const randomNumber = (min = 0, max = 1) =>
@@ -24,8 +24,8 @@ async function callApi(endpoint, options = {}) {
 const api = {
   badges: {
     list() {
-      throw new Error('Not Found')
-      // return callApi('/badges');
+      // throw new Error('500: Server error')
+      return callApi('/badges');
     },
     create(badge) {
       return callApi(`/badges`, {

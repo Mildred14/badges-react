@@ -2,8 +2,9 @@ import React from 'react'
 import {Link} from 'react-router-dom';
 import api from '../api'
 import '../styles/Badges.css'
-import confLogo from '../images/badge-header.svg'
+import confLogo from '../images/platziconf-logo.svg'
 import PageLoading from '../components/PageLoading'
+import PageError from '../components/PageError'
 import BadgesList from '../components/BadgesList'
 
 class Badges extends React.Component {
@@ -22,7 +23,6 @@ class Badges extends React.Component {
       loading: true,
       error: null,
     })
-
     try {
       const data = await api.badges.list()
       this.setState({
@@ -42,7 +42,7 @@ class Badges extends React.Component {
       return <PageLoading/>
     }
     if(this.state.error){
-      return `Error: ${this.state.error.message}`
+      return <PageError error={this.state.error}/>
     }
 
     return (
